@@ -1,7 +1,0 @@
-set_property -dict {PACKAGE_PIN Y9 IOSTANDARD LVCMOS25} [get_ports {clock}]
-set_property -dict {PACKAGE_PIN F22 IOSTANDARD LVCMOS25} [get_ports {reset}]
-set_property -dict {PACKAGE_PIN M15 IOSTANDARD LVCMOS25} [get_ports {sel}]
-set_property -dict {PACKAGE_PIN T22 IOSTANDARD LVCMOS25} [get_ports {counter_output[0]}]
-set_property -dict {PACKAGE_PIN T21 IOSTANDARD LVCMOS25} [get_ports {counter_output[1]}]
-set_property -dict {PACKAGE_PIN U22 IOSTANDARD LVCMOS25} [get_ports {counter_output[2]}]
-set_property -dict {PACKAGE_PIN U21 IOSTANDARD LVCMOS25} [get_ports {counter_output[3]}]
