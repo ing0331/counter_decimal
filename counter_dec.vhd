@@ -49,22 +49,21 @@ architecture Behavioral of counter_dec is
 	
 	Process(reset, clk_div ) 
 	begin 
-
-			if reset = '0' then
-				count <= "0000";
-			elsif clk_div'event and clk_div = '1' then 
-				if sel = '1' then
-					count <= count + 1;
-					if count = "1001" then
-						count <= "0000";
-					end if;
-				else
-					count <= count - 1;
-					if count = "0000" then 
-						count <= "1001";
-					end if;
+		if reset = '0' then
+			count <= "0000";
+		elsif clk_div'event and clk_div = '1' then 
+			if sel = '1' then
+				count <= count + 1;
+				if count = "1001" then
+					count <= "0000";
+				end if;
+			else
+				count <= count - 1;
+				if count = "0000" then 
+					count <= "1001";
 				end if;
 			end if;
+		end if;
 	end process;
 	
 	counter_output <= count;
@@ -72,9 +71,9 @@ architecture Behavioral of counter_dec is
 	process(count)
 	begin
 	   case count is 
-	       when "0000" => out_segment <= "0000001";
-	       when "0001" => out_segment <= "1001111";
-	       when "0010" => out_segment <= "0010010";
+	   when "0000" => out_segment <= "0000001";
+	   when "0001" => out_segment <= "1001111";
+	   when "0010" => out_segment <= "0010010";
            when "0011" => out_segment <= "0000110"; -- "3" 
            when "0100" => out_segment <= "1001100"; -- "4" 
            when "0101" => out_segment <= "0100100"; -- "5" 
